@@ -4,12 +4,15 @@ import colors from "colors";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 
 connectDB();
 
 const app = express();
+
+app.use(express.json());
 
 //routes
 
@@ -18,6 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
+app.use("/api/users", userRoutes);
 
 //error handler middleware
 app.use(notFound);
