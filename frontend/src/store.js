@@ -19,6 +19,7 @@ import {
   userUpdateProfileReducer,
   userListReducer,
   userDeleteReducer,
+  userUpdateReducer,
 } from "./reducers/userReducers";
 
 const reducer = combineReducers({
@@ -35,6 +36,7 @@ const reducer = combineReducers({
   orderDetails: orderDetailsReducer,
   orderPay: orderPayReducer,
   orderListMy: orderListMyReducer,
+  userUpdate: userUpdateReducer,
 });
 
 const cartItemsFromStorage = localStorage.getItem("cartItems")
