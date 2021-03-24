@@ -6,7 +6,9 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { listProducts } from "../actions/productActions";
 
-const HomeScreen = () => {
+const HomeScreen = ({ match }) => {
+  const keyword = match.params.keyword;
+
   const dispatch = useDispatch();
 
   //grab from state
@@ -19,10 +21,10 @@ const HomeScreen = () => {
   useEffect(
     () => {
       //fire off action, get products & send through reducer to the state
-      dispatch(listProducts());
+      dispatch(listProducts(keyword));
     },
     //dependency
-    [dispatch]
+    [dispatch, keyword]
   );
 
   return (
