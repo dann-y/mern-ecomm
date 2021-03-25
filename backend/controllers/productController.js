@@ -11,7 +11,7 @@ import Product from "../models/productModel.js";
 
 const getProducts = asyncHandler(async (req, res) => {
   //how many items per page
-  const pageSize = 10;
+  const pageSize = 6;
   //if page is not included, show 1
   const page = Number(req.query.pageNumber) || 1;
   //query allows to retreive from query (=?)

@@ -38,13 +38,13 @@ const HomeScreen = ({ match }) => {
 
       {keyword ? (
         <>
-          <h1>Search results for "{keyword}"</h1>
+          <h2>Search results for "{keyword}"</h2>
           <Link to="/" className="btn btn-light">
             Go Back
           </Link>
         </>
       ) : (
-        <h1>Latest Products</h1>
+        <h2>Latest Products</h2>
       )}
       {loading ? (
         <Loader />
@@ -54,7 +54,7 @@ const HomeScreen = ({ match }) => {
         <>
           <Row>
             {products.map((product) => (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+              <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
                 <Product product={product} />
               </Col>
             ))}

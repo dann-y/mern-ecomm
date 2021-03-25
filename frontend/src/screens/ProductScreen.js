@@ -45,28 +45,96 @@ const ProductScreen = ({ history, match }) => {
         <>
           <Meta title={product.name} />
           <Row>
-            <Col md={6}>
+            <Col
+              md={6}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
               {/* fluid keeps image within container */}
-              <Image src={product.image} alt={product.name} fluid />
+              <div>
+                <Image src={product.image} alt={product.name} fluid />
+              </div>
             </Col>
-            <Col md={3}>
+            <Col md={6}>
               <ListGroup variant="flush">
                 <ListGroup.Item>
-                  <h3>{product.name}</h3>
+                  <strong>{product.brand}</strong>
+                  <h3 className="my-2">{product.name}</h3>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                {/* <ListGroup.Item>
                   <Rating
                     value={product.rating}
                     text={`${product.numReviews} reviews`}
                   />
-                </ListGroup.Item>
-                <ListGroup.Item>Price: ${product.price}</ListGroup.Item>
+                </ListGroup.Item> */}
+
+                <ListGroup.Item>{product.description}</ListGroup.Item>
                 <ListGroup.Item>
-                  Description: {product.description}
+                  <Row>
+                    <Col>Price</Col>
+                    <Col>${product.price}</Col>
+                  </Row>
                 </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Status</Col>
+                    <Col>
+                      {product.countInStock > 0 ? "In Stock" : "Out Of Stock"}
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+                {/* if in stock, show qty row */}
+                {product.countInStock > 0 ? (
+                  <>
+                    <ListGroup.Item>
+                      <Row>
+                        <Col>Qty</Col>
+                        <Col>
+                          <Form.Control
+                            as="select"
+                            value={qty}
+                            onChange={(e) => setQty(e.target.value)}
+                          >
+                            {[...Array(product.countInStock).keys()].map(
+                              (x) => (
+                                <option key={x + 1} value={x + 1}>
+                                  {x + 1}
+                                </option>
+                              )
+                            )}
+                          </Form.Control>
+                        </Col>
+                      </Row>
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                      <Button
+                        onClick={addToCartHandler}
+                        className="btn-block"
+                        type="button"
+                        disabled={product.countInStock === 0}
+                      >
+                        Add to Cart
+                      </Button>
+                    </ListGroup.Item>
+                  </>
+                ) : (
+                  <ListGroup.Item>
+                    <Button
+                      onClick={addToCartHandler}
+                      className="btn-block"
+                      type="button"
+                      disabled={product.countInStock === 0}
+                    >
+                      Out Of Stock
+                    </Button>
+                  </ListGroup.Item>
+                )}
               </ListGroup>
             </Col>
-            <Col md={3}>
+            {/* <Col md={3}>
               <Card>
                 <ListGroup variant="flush">
                   <ListGroup.Item>
@@ -85,7 +153,7 @@ const ProductScreen = ({ history, match }) => {
                       </Col>
                     </Row>
                   </ListGroup.Item>
-                  {/* if in stock, show qty row */}
+                  {/* if in stock, show qty row 
                   {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <Row>
@@ -121,7 +189,7 @@ const ProductScreen = ({ history, match }) => {
                   </ListGroup.Item>
                 </ListGroup>
               </Card>
-            </Col>
+            </Col> */}
           </Row>
         </>
       )}

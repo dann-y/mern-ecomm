@@ -5,28 +5,41 @@ import Rating from "./Rating";
 
 const Product = ({ product }) => {
   return (
-    <Card className="my-3 p-3 rounded">
-      <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image} variant="top" />
-      </Link>
+    <Card className="my-3 p-3 rounded " border="light">
+      <div
+        style={{
+          minHeight: "250px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Link to={`/product/${product._id}`}>
+          <Card.Img src={product.image} variant="top" />
+        </Link>
+      </div>
 
       <Card.Body>
+        <Card.Text as="div">
+          <div className="my-2">{product.brand}</div>
+        </Card.Text>
+
         <Link to={`product/${product._id}`}>
           <Card.Title as="div">
             <strong>{product.name}</strong>
           </Card.Title>
         </Link>
-
-        <Card.Text as="div">
-          <div className="my-3">
-            <Rating
-              value={product.rating}
-              text={`${product.numReviews} reviews`}
-            />
-          </div>
-        </Card.Text>
-
-        <Card.Text as="h3">${product.price}</Card.Text>
+        {product.countInStock > 0 ? (
+          <Card.Text as="h4">${product.price}</Card.Text>
+        ) : (
+          <>
+            <Card.Text as="h4">
+              {" "}
+              <s className="text-muted">${product.price}</s>
+            </Card.Text>
+            <Card.Text>Sold Out</Card.Text>
+          </>
+        )}
       </Card.Body>
     </Card>
   );

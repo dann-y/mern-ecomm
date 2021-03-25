@@ -19,10 +19,11 @@ const SearchBox = ({ history }) => {
         type="text"
         name="q"
         onChange={(e) => setKeyword(e.target.value)}
-        placeholder="Search Products..."
+        placeholder="Search Products"
         className="mr-sm-2 ml-sm-5"
+        style={{ paddingRight: "80px" }}
       ></Form.Control>
-      <Button type="submit" variant="outline-success" className="p-2">
+      <Button type="submit" variant="outline-light" className="py-2 px-4">
         Search
       </Button>
     </Form>
