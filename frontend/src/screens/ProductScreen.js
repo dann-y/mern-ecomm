@@ -34,9 +34,9 @@ const ProductScreen = ({ history, match }) => {
 
   return (
     <>
-      <Link className="btn btn-light my-3" to="/">
+      {/* <Link className="btn btn-light my-3" to="/">
         Go Back
-      </Link>
+      </Link> */}
       {loading ? (
         <Loader />
       ) : error ? (
@@ -44,7 +44,7 @@ const ProductScreen = ({ history, match }) => {
       ) : (
         <>
           <Meta title={product.name} />
-          <Row>
+          <Row className="py-5">
             <Col
               md={6}
               style={{
@@ -109,7 +109,7 @@ const ProductScreen = ({ history, match }) => {
                         </Col>
                       </Row>
                     </ListGroup.Item>
-                    <ListGroup.Item>
+                    <ListGroup.Item className="py-4">
                       <Button
                         onClick={addToCartHandler}
                         className="btn-block"
@@ -124,7 +124,7 @@ const ProductScreen = ({ history, match }) => {
                   <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
-                      className="btn-block"
+                      className="btn-block py-3"
                       type="button"
                       disabled={product.countInStock === 0}
                     >

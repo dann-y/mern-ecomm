@@ -82,12 +82,25 @@ const PlaceOrderScreen = ({ history }) => {
                   {cart.cartItems.map((item, index) => (
                     <ListGroup.Item key={index}>
                       <Row>
-                        <Col md={1}>
+                        <Col
+                          md={1}
+                          style={{
+                            height: "40px",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                        >
                           <Image
                             src={item.image}
                             alt={item.name}
                             fluid
                             rounded
+                            style={{
+                              maxHeight: "40px",
+                              width: "auto",
+                              maxWidth: "100% ",
+                            }}
                           />
                         </Col>
                         <Col>
@@ -96,7 +109,8 @@ const PlaceOrderScreen = ({ history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x ${item.price} = $
+                          {(item.qty * item.price).toFixed(2)}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -136,18 +150,20 @@ const PlaceOrderScreen = ({ history }) => {
                   <Col>${cart.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
+
               <ListGroup.Item>
-                {error && <Message variant="danger">{error}</Message>}
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Button
-                  type="button"
-                  className="btn-block"
-                  disabled={cart.cartItems === 0}
-                  onClick={placeOrderHandler}
-                >
-                  Place Order
-                </Button>
+                {error ? (
+                  <Message variant="danger">{error}</Message>
+                ) : (
+                  <Button
+                    type="button"
+                    className="btn-block"
+                    disabled={cart.cartItems === 0}
+                    onClick={placeOrderHandler}
+                  >
+                    Place Order
+                  </Button>
+                )}
               </ListGroup.Item>
             </ListGroup>
           </Card>

@@ -35,6 +35,12 @@ const LoginScreen = ({ location, history }) => {
       {error && <Message variant="danger">{error}</Message>}
       {loading && <Loader />}
       <Form onSubmit={submitHandler}>
+        <p>
+          {" "}
+          You may register your own account or <br /> use the following demo
+          credentials. <br /> <br />
+          Email: john@example.com <br /> Password: 123456
+        </p>
         <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control

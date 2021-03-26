@@ -44,7 +44,7 @@ const HomeScreen = ({ match }) => {
           </Link>
         </>
       ) : (
-        <h2>Latest Products</h2>
+        <h2 className="py-4">Latest Products</h2>
       )}
       {loading ? (
         <Loader />

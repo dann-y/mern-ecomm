@@ -9,6 +9,10 @@ import { logout } from "../actions/userActions";
 const Header = () => {
   const dispatch = useDispatch();
 
+  //obtain items from state
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -23,7 +27,7 @@ const Header = () => {
         variant="dark"
         expand="lg"
         collapseOnSelect
-        style={{ padding: "15px", position: "sticky", top: "0" }}
+        style={{ padding: "15px", position: "sticky", top: "0", zIndex: "5" }}
       >
         <Container>
           <LinkContainer to="/">
@@ -35,7 +39,8 @@ const Header = () => {
             <Nav className="ml-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>
-                  <i className="fas fa-shopping-cart"></i> Cart
+                  <i className="fas fa-shopping-cart"></i> Cart (
+                  {cartItems.length})
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (

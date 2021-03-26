@@ -8,14 +8,22 @@ const Product = ({ product }) => {
     <Card className="my-3 p-3 rounded " border="light">
       <div
         style={{
-          minHeight: "250px",
+          height: "250px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
         <Link to={`/product/${product._id}`}>
-          <Card.Img src={product.image} variant="top" />
+          <Card.Img
+            src={product.image}
+            variant="top"
+            style={{
+              maxHeight: "250px",
+              width: "auto",
+              maxWidth: "100% ",
+            }}
+          />
         </Link>
       </div>
 
