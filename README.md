@@ -1,6 +1,6 @@
 This full stack project was built while following along Brad Traversy's "MERN" eCommerce from Scratch" online course on Udemy. 
 
-Primary Technologies used:
+## Primary Technologies Used:
 
 React.js  
 Node.js  
@@ -8,7 +8,7 @@ Express.js
 MongoDB  
 
 
-Features include:
+## Features Include:
 
 Full featured shopping cart  
 Product pagination  
