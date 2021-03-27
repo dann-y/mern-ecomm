@@ -39,7 +39,7 @@ const LoginScreen = ({ location, history }) => {
           {" "}
           You may register your own account or <br /> use the following demo
           credentials. <br /> <br />
-          Email: john@example.com <br /> Password: 123456
+          Email: john@example.com <br /> Password: jd123456
         </p>
         <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>
