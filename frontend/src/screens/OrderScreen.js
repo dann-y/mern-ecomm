@@ -11,6 +11,7 @@ import {
   ORDER_PAY_RESET,
   ORDER_CREATE_RESET,
 } from "../constants/orderConstants";
+import { CART_RESET } from "../constants/cartConstants";
 
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id;
@@ -45,6 +46,7 @@ const OrderScreen = ({ match, history }) => {
     }
 
     dispatch({ type: ORDER_CREATE_RESET });
+    dispatch({ type: CART_RESET });
 
     const addPayPalScript = async () => {
       const { data: clientId } = await axios.get("/api/config/paypal");
