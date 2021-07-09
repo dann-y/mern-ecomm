@@ -31,6 +31,7 @@ const ShippingScreen = ({ history }) => {
         <Form.Group controlId="address">
           <Form.Label>Address</Form.Label>
           <Form.Control
+          className="rounded"
             type="text"
             placeholder="Enter address"
             value={address}
@@ -41,6 +42,7 @@ const ShippingScreen = ({ history }) => {
         <Form.Group controlId="city">
           <Form.Label>City</Form.Label>
           <Form.Control
+          className="rounded"
             type="text"
             placeholder="Enter city"
             value={city}
@@ -51,6 +53,7 @@ const ShippingScreen = ({ history }) => {
         <Form.Group controlId="postalCode">
           <Form.Label>Postal Code</Form.Label>
           <Form.Control
+          className="rounded"
             type="text"
             placeholder="Enter postal code"
             value={postalCode}
@@ -60,7 +63,7 @@ const ShippingScreen = ({ history }) => {
         </Form.Group>
         <Form.Group controlId="country">
           <Form.Label>Country</Form.Label>
-          <Form.Control
+          <Form.Control className="rounded"
             type="text"
             placeholder="Enter country"
             value={country}
@@ -68,7 +71,7 @@ const ShippingScreen = ({ history }) => {
             onChange={(e) => setCountry(e.target.value)}
           ></Form.Control>
         </Form.Group>
-        <Button type="submit" variant="primary">
+        <Button className="rounded" type="submit" variant="primary">
           Continue
         </Button>
       </Form>

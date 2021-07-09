@@ -44,6 +44,7 @@ const LoginScreen = ({ location, history }) => {
         <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
+          className="rounded"
             type="email"
             placeholder="Enter email"
             value={email}
@@ -54,6 +55,7 @@ const LoginScreen = ({ location, history }) => {
         <Form.Group controlId="password">
           <Form.Label>Password</Form.Label>
           <Form.Control
+                    className="rounded"
             type="password"
             placeholder="Enter password"
             value={password}
@@ -61,7 +63,7 @@ const LoginScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary"           className="rounded">
           Sign In
         </Button>
       </Form>

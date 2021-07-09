@@ -66,6 +66,7 @@ const ProfileScreen = ({ location, history }) => {
           <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
             <Form.Control
+            className="rounded"
               type="name"
               placeholder="Enter name"
               value={name}
@@ -76,6 +77,7 @@ const ProfileScreen = ({ location, history }) => {
           <Form.Group controlId="email">
             <Form.Label>Email Address</Form.Label>
             <Form.Control
+            className="rounded"
               type="email"
               placeholder="Enter email"
               value={email}
@@ -86,6 +88,7 @@ const ProfileScreen = ({ location, history }) => {
           <Form.Group controlId="password">
             <Form.Label>Password</Form.Label>
             <Form.Control
+            className="rounded"
               type="password"
               placeholder="Enter password"
               value={password}
@@ -96,6 +99,7 @@ const ProfileScreen = ({ location, history }) => {
           <Form.Group controlId="confirmPassword">
             <Form.Label>Confirm Password</Form.Label>
             <Form.Control
+            className="rounded"
               type="password"
               placeholder="Confirm Password"
               value={confirmPassword}
@@ -103,7 +107,7 @@ const ProfileScreen = ({ location, history }) => {
             ></Form.Control>
           </Form.Group>
 
-          <Button type="submit" variant="primary">
+          <Button className="rounded" type="submit" variant="primary">
             Update
           </Button>
         </Form>
@@ -148,7 +152,7 @@ const ProfileScreen = ({ location, history }) => {
                   </td>
                   <td>
                     <LinkContainer to={`/order/${order._id}`}>
-                      <Button className="btn-sm" variant="light">
+                      <Button className="btn-sm rounded" variant="light" >
                         Details
                       </Button>
                     </LinkContainer>{" "}

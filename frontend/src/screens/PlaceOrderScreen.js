@@ -156,8 +156,9 @@ const PlaceOrderScreen = ({ history }) => {
                   <Message variant="danger">{error}</Message>
                 ) : (
                   <Button
+                    
                     type="button"
-                    className="btn-block"
+                    className="btn-block rounded"
                     disabled={cart.cartItems === 0}
                     onClick={placeOrderHandler}
                   >

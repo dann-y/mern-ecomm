@@ -79,6 +79,7 @@ const CartScreen = ({ match, location, history }) => {
                     <Form.Control
                       as="select"
                       value={item.qty}
+                      className="rounded"
                       onChange={(e) =>
                         dispatch(
                           addToCart(item.product, Number(e.target.value))
@@ -96,6 +97,7 @@ const CartScreen = ({ match, location, history }) => {
                     <Button
                       type="button"
                       variant="light"
+                      className="rounded"
                       onClick={() => removeFromCartHandler(item.product)}
                     >
                       <i className="fas fa-trash"></i>
@@ -108,7 +110,7 @@ const CartScreen = ({ match, location, history }) => {
         )}
       </Col>
       <Col md={4}>
-        <Card>
+        <Card >
           <ListGroup variant="flush">
             <ListGroup.Item>
               <h2>
@@ -123,7 +125,7 @@ const CartScreen = ({ match, location, history }) => {
             <ListGroup.Item>
               <Button
                 type="button"
-                className="btn-block"
+                className="btn-block rounded"
                 disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
               >

@@ -97,6 +97,7 @@ const ProductScreen = ({ history, match }) => {
                             as="select"
                             value={qty}
                             onChange={(e) => setQty(e.target.value)}
+                            className="rounded"
                           >
                             {[...Array(product.countInStock).keys()].map(
                               (x) => (
@@ -112,7 +113,7 @@ const ProductScreen = ({ history, match }) => {
                     <ListGroup.Item className="py-4">
                       <Button
                         onClick={addToCartHandler}
-                        className="btn-block"
+                        className="btn-block rounded"
                         type="button"
                       >
                         Add to Cart
@@ -123,7 +124,7 @@ const ProductScreen = ({ history, match }) => {
                   <ListGroup.Item>
                     <Button
                       onClick={addToCartHandler}
-                      className="btn-block py-3"
+                      className="btn-block py-3 rounded"
                       type="button"
                       disabled={product.countInStock === 0}
                     >

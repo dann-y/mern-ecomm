@@ -45,7 +45,7 @@ const RegisterScreen = ({ location, history }) => {
       <Form onSubmit={submitHandler}>
         <Form.Group controlId="name">
           <Form.Label>Name</Form.Label>
-          <Form.Control
+          <Form.Control           className="rounded"
             type="name"
             placeholder="Enter name"
             value={name}
@@ -55,7 +55,7 @@ const RegisterScreen = ({ location, history }) => {
 
         <Form.Group controlId="email">
           <Form.Label>Email Address</Form.Label>
-          <Form.Control
+          <Form.Control           className="rounded"
             type="email"
             placeholder="Enter email"
             value={email}
@@ -65,7 +65,7 @@ const RegisterScreen = ({ location, history }) => {
 
         <Form.Group controlId="password">
           <Form.Label>Password</Form.Label>
-          <Form.Control
+          <Form.Control           className="rounded"
             type="password"
             placeholder="Enter password"
             value={password}
@@ -75,7 +75,7 @@ const RegisterScreen = ({ location, history }) => {
 
         <Form.Group controlId="confirmPassword">
           <Form.Label>Confirm Password</Form.Label>
-          <Form.Control
+          <Form.Control           className="rounded"
             type="password"
             placeholder="Confirm Password"
             value={confirmPassword}
@@ -83,7 +83,7 @@ const RegisterScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary"           className="rounded">
           Register
         </Button>
       </Form>
